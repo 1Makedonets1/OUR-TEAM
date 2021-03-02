@@ -1,0 +1,217 @@
+@import "../node_modules/normalize-scss/sass/normalize"; 
+
+
+@mixin e($name) {
+    &__#{$name} {
+        @content;
+    }
+}
+
+@mixin m($name) {
+    &_#{$name} {
+        @content;
+    }
+}
+
+:root {
+    --grey: #666666;
+}
+
+:root {
+    --yellow: #FFCC00;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.team {
+    display: flex;
+    flex-direction: column;
+    padding-top: 100px;
+    font-family: 'Raleway', sans-serif;
+    color: #898F8F;
+        
+    @include e (title) {
+        max-width: 315px;
+        margin: auto;
+        text-align: center;
+
+        @include m(text) {
+            font-size: 18px;
+            padding-bottom: 18px;
+        }
+
+        @include m(title) {
+            font-size: 60px;
+            color: var(--yellow);
+            padding-bottom: 45px;
+        }
+    }
+
+    @include e(logoLine) {
+        margin: auto;
+    }
+
+    @include e(content) {
+        margin: auto;
+        max-width: 1200px;
+        display: flex;
+        justify-content: space-between;
+        padding-top: 40px;
+
+        @include m(slide) {
+            width: 14px;
+            margin: 45px;
+        }
+    }
+
+    @include e(separator) {
+        width: 2px;
+        height: 565px;
+        background: var(--yellow);
+        margin-left: 85px;
+        margin-right: 85px;
+    }
+}
+
+.developer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 415px;
+    height: 415px;
+    margin-top: 75px;
+}
+
+.cornerLine {
+    display: flex;
+    justify-content: space-between;
+    height: 2px;
+    @include e(line) {
+        width: 100px;
+        background: var(--yellow);
+        height: 2px;
+    }
+
+}
+
+.photo {
+    display: flex;
+    justify-content: space-between;
+
+    @include e(photo) {
+        background-image: url(../images/photo.png);
+        width: 389px;
+        height: 389px;
+        border: solid 3px var(--yellow);
+        margin: 12px;
+    }
+
+    @include e(line) {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        
+
+        @include m(line) {
+            height: 100px;
+            background: var(--yellow);
+            width: 2px;
+        }
+    }
+}
+
+.top {
+    margin-top: -2px;
+}
+
+.bottom {
+    margin-bottom: -2px;
+}
+
+.about {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+    height: 415px;
+    width: 415px;
+    margin-top: 75px;
+
+    @include e(name) {
+        font-size: 36px;
+        font-family: 'Roboto', sans-serif;
+        font-weight: bold;
+        color: var(--grey);
+    }
+    @include e(separator) {
+        width: 100px;
+        height: 2px;
+        background: var(--yellow);
+        margin: auto;
+    }
+    @include e(specialty) {
+        font-size: 24px;
+        color:var(--grey);
+    }
+    @include e(network) {
+        margin: auto;
+        display: flex;
+        width: 140px;
+        height: 31px;
+
+        @include m(icon){
+            width: 31px;
+            height: 31px;
+        }
+    
+    }
+    @include e(about) {
+        width: 416px;
+        height: 110px;
+        color :#333333;
+        font-size: 14px;
+    }
+    @include e(boxes) {
+        margin: auto;
+    }
+    @include e(button) {
+        margin: auto;
+        width: 120px;
+        height: 25px;
+        color: var(--grey);
+        font-size: 14px;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: bold;
+        border: solid 2px var(--yellow);
+    }
+}
+
+.circle {
+    display: flex;
+    width: 50px;
+    height: 11px;
+    margin: auto;
+    justify-content: space-between;
+    padding-top: 20px;
+    padding-bottom: 50px;
+
+    @include e(circle) {
+        width: 11px;
+        height: 11px; 
+        border-radius: 50px;
+        border: solid 2px var(--yellow);
+    }
+}
+
+
+.full {
+    background: var(--yellow);
+}
+
+
+
+
